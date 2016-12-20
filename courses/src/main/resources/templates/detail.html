@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Detail</title>
+</head>
+<body>
+    <table th:unless="${#lists.isEmpty(courseList)}">
+        <tr>
+            <th><u><b>Name</b></u></th>
+            <td><u><b>Duration</b></u></td>
+            <td><u><b>Description</b></u></td>
+        </tr>
+        <tr th:each="course : ${courseList}">
+            <td th:text="${course.name}"/>
+            <td th:text="${course.duration}"/>
+            <td th:text="${course.description}"/>
+        </tr>
+        <tr>
+            <td><a href="/">Go Home</a></td>
+        </tr>
+    </table>
+</body>
+</html>
